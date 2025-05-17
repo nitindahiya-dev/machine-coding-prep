@@ -1,0 +1,14 @@
+src/
+├── components/
+│   ├── switchCase/
+│   │   └── SwitchCase.jsx
+│   ├── infiniteScroll/
+│   │   └── InfinityScroll.jsx
+├── styles/
+│   ├── Global.css
+│   ├── Header.css
+│   ├── Landing.css
+│   ├── SwitchCase.css
+│   ├── Banner.css
+│   ├── Footer.css
+├── App.jsx

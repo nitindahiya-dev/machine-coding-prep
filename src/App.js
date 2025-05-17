@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./index.css";
+import "./styles/Header.css";
+import "./styles/Landing.css";
+import "./styles/Banner.css";
+import "./styles/Footer.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SwitchCase from "./components/switchCase/SwitchCase";
 import InfinityScroll from "./components/infiniteScroll/InfinityScroll";
+
 
 const App = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

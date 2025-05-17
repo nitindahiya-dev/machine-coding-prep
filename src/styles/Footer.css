@@ -1,0 +1,27 @@
+.footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+  }
+  
+  .repo-button,
+  .contact-button {
+    padding: 0.8rem 2rem;
+    margin: 1rem 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .repo-button {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  .contact-button {
+    background: #2196F3;
+    color: white;
+  }

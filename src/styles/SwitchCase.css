@@ -1,0 +1,107 @@
+.switch-case-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .switch-case-container-center{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .case-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .case-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .case-button:hover {
+    background: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .case-button.active {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  .case-content {
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .case-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #4CAF50;
+  }
+  
+  .case-content h2 {
+    margin-bottom: 1rem;
+    color: #4CAF50;
+    font-size: 1.8rem;
+  }
+  
+  .case-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add different colors for each case */
+  .case-content[data-case="x"]::before,
+  .case-content[data-case="x"] h2 {
+    color: #2196F3;
+    background: #2196F3;
+  }
+  
+  .case-content[data-case="y"]::before,
+  .case-content[data-case="y"] h2 {
+    color: #FFC107;
+    background: #FFC107;
+  }
+  
+  .case-content[data-case="z"]::before,
+  .case-content[data-case="z"] h2 {
+    color: #9C27B0;
+    background: #9C27B0;
+  }

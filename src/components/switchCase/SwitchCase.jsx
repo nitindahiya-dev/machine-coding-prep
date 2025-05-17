@@ -1,5 +1,4 @@
-//src/components/switchCase/SwitchCase.jsx
-
+import "../../styles/SwitchCase.css";
 import React, { useState } from 'react'
 import Switch from './Switch'
 import Case from './Case'
@@ -10,6 +9,7 @@ const SwitchCase = () => {
   return (
     <div className="switch-case-container">
       <h1>Switch Case Demo</h1>
+<div className="switch-case-container-center">
 
       <div className="case-selector">
         {['x', 'y', 'z'].map((caseType) => (
@@ -43,6 +43,7 @@ const SwitchCase = () => {
           </div>
         </Case>
       </Switch>
+      </div>
     </div>
   )
 }
