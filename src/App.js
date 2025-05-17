@@ -147,7 +147,7 @@ const App = () => {
           <p>© {new Date().getFullYear()} Frontend Interview Prep. All rights reserved.</p>
           <div className="footer-links">
             <a href="https://github.com/nitindahiya-dev/machine-coding-prep" target="_blank" rel="noopener noreferrer"><button className="repo-button">View Repository</button></a>
-            <a href="https://alpha.learnersbucket.com" target="_blank" rel="noopener noreferrer"><button className="contact-button">Contribute</button></a>
+            <a href="https://github.com/nitindahiya-dev/machine-coding-prep" target="_blank" rel="noopener noreferrer"><button className="contact-button">Contribute</button></a>
           </div>
         </footer>
       </div>
