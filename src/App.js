@@ -63,6 +63,54 @@ const App = () => {
 
   const LandingPage = () => (
     <>
+
+     {/* New Banner Section */}
+     <section className="hero-banner">
+      <div className="banner-content">
+        <div className="banner-text">
+          <h1 className="banner-title">
+            <span className="title-gradient">Crack Frontend Interviews</span>
+            <span className="emoji-rocket">🚀</span>
+          </h1>
+          <p className="banner-subtitle">
+            Master 35+ Real-World Machine Coding Challenges from Top Tech Companies
+          </p>
+          <div className="banner-cta">
+            <Link
+              to="https://github.com/nitindahiya-dev/machine-coding-prep"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button github-cta"
+            >
+              <span className="emoji">👨💻</span> View on GitHub
+            </Link>
+            {/* <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button course-cta"
+            >
+              <span className="emoji">🎓</span> Enroll Now
+            </a> */}
+          </div>
+        </div>
+        <div className="banner-visual">
+          <div className="floating-card">
+            <div className="code-snippet">
+              <span className="code-line react">import React from 'react';</span>
+              <span className="code-line component">const InterviewPrep = () => (</span>
+              <span className="code-line jsx">  &lt;Success path="/your-career" /&gt;</span>
+              <span className="code-line component">);</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="animated-blobs">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
+      </div>
+    </section>
+
       <section className="intro-section">
         <div className="content-card">
           <h2 className="section-title">🎯 Why This Repository?</h2>

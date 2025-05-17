@@ -265,7 +265,6 @@ body {
 
 /* Header Css */
 
-/* Header Styles */
 .app-header {
   background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
   padding: 1rem 2rem;
@@ -445,6 +444,11 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+
+  .hero-banner {
+    padding: 2rem !important;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -477,21 +481,28 @@ body {
     position: static;
     width: 100%;
     background: #333;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
+    max-height: 0; 
+    overflow: hidden; 
     display: block;
     box-shadow: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: max-height 0.3s ease;
+    padding: 0;
   }
+  
   .dropdown.open .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    max-height: 500px; 
+    overflow-y: scroll;
   }
+
+  .landing-container{
+    padding: 1rem;
+  }
+  
   .dropdown-toggle {
+    cursor: pointer; 
+    display: flex;
+    justify-content: space-between; 
     width: 100%;
-    justify-content: space-between;
   }
   .dropdown-item {
     padding: 0.8rem 1.5rem;
@@ -514,5 +525,197 @@ body {
   .hamburger-line {
     width: 20px;
     height: 2px;
+  }
+}
+
+/* Banner Styles */
+.hero-banner {
+  position: relative;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 1400px;
+}
+
+.banner-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-text {
+  flex: 1 1 60%;
+  min-width: 300px;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title-gradient {
+  background: linear-gradient(45deg, #4CAF50, #8BC34A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emoji-rocket {
+  animation: float 3s ease-in-out infinite;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.banner-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.github-cta {
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.github-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3);
+}
+
+.course-cta {
+  background: #2196F3;
+  color: white;
+}
+
+.course-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(33, 150, 243, 0.3);
+}
+
+.banner-visual {
+  flex: 1 1 35%;
+  min-width: 300px;
+}
+
+.floating-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.code-snippet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-family: 'Courier New', monospace;
+}
+
+.code-line {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.react { color: #61DAFB; }
+.component { color: #4CAF50; }
+.jsx { color: #FF4081; margin-left: 1rem; }
+
+.animated-blobs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+}
+
+.blob-1 {
+  width: 300px;
+  height: 300px;
+  background: #4CAF50;
+  top: -50px;
+  left: -50px;
+  animation: blob-float 15s infinite linear;
+}
+
+.blob-2 {
+  width: 250px;
+  height: 250px;
+  background: #2196F3;
+  bottom: -80px;
+  right: -50px;
+  animation: blob-float 18s infinite linear;
+}
+
+.blob-3 {
+  width: 200px;
+  height: 200px;
+  background: #FFC107;
+  top: 40%;
+  left: 30%;
+  animation: blob-float 12s infinite linear;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes blob-float {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(100px, 100px); }
+  50% { transform: translate(50px, 150px); }
+  75% { transform: translate(-50px, 100px); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2.5rem;
+    /* flex-direction: column; */
+    align-items: center;
+  }
+  
+  .banner-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
   }
 }
