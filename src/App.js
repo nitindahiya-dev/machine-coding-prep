@@ -6,6 +6,7 @@ import "./styles/Footer.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SwitchCase from "./components/switchCase/SwitchCase";
 import InfinityScroll from "./components/infiniteScroll/InfinityScroll";
+import Accordion from "./components/accordion/Accordion";
 
 
 const App = () => {
@@ -191,6 +192,7 @@ const App = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/switch-case" element={<SwitchCase />} />
           <Route path="/infinite-scroll" element={<InfinityScroll />} />
+          <Route path="/accordion" element={<Accordion />} />
           {challenges.filter(challenge => challenge.path !== "/switch-case" && challenge.path !== "/infinite-scroll").map(challenge => (
             <Route key={challenge.path} path={challenge.path} element={<div className="content-card"><h2>{challenge.title}</h2><p>Coming soon! This component is not yet implemented.</p><Link to="/">Back to Home</Link></div>} />
           ))}
