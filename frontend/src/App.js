@@ -18,10 +18,15 @@ const App = () => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
 
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setOpenDropdown(null);
-  }, [window.location.pathname]);
+useEffect(() => {
+    // Reset menu and dropdown on route change using window.location.pathname
+    const handleRouteChange = () => {
+      setIsMobileMenuOpen(false);
+      setOpenDropdown(null);
+    };
+    window.addEventListener('popstate', handleRouteChange);
+    return () => window.removeEventListener('popstate', handleRouteChange);
+  }, []);
 
   const challenges = [
     { id: 1, title: "Tic-Tac-Toe with Bot (Vanilla JS)", path: "/tic-tac-toe" },
