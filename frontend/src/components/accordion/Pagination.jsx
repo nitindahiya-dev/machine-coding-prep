@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import '../../styles/Pagination.css';
 
@@ -7,20 +8,25 @@ const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
 
-  async function fetchData() {
-    try {
-      const response = await fetch(process.env.REACT_APP_PAGINATION_API);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const fetchedData = await response.json();
-      setData(fetchedData.plants); // Store all plants data
-      setDisplayedData(fetchedData.plants.slice(0, itemsPerPage)); // Display first 5 items
-    } catch (error) {
-      console.error(`Error fetching data: ${error}`);
+async function fetchData() {
+  try {
+    const apiUrl = process.env.REACT_APP_PAGINATION_API;
+    console.log(`Fetching data from: ${apiUrl}`);
+    const response = await fetch(apiUrl);
+    
+    if (!response.ok) {
+      const errorText = await response.text(); // Get the response body as text
+      console.error(`HTTP error: ${response.status} - ${errorText}`);
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const fetchedData = await response.json();
+    setData(fetchedData.plants); // Store all plants data
+    setDisplayedData(fetchedData.plants.slice(0, itemsPerPage)); // Display first items
+  } catch (error) {
+    console.error(`Error fetching data: ${error}`);
   }
+}
+
 
   const goToPage = (page) => {
     const startIndex = page * itemsPerPage;
